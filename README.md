@@ -45,10 +45,74 @@ En el siguiente link puedes realizar la instalación de git: https://git-scm.com
 | *git commit -am “commit description”* | Añade al staging area y hace un commit mediante un solo comando. (No funciona con archivos nuevos) |
 | *git status* | Ofrece una descripción del estado de los archivos (untracked, ready to commit, nothing to commit) |
 
+
+&nbsp;
+
+
+## Configuración Git
+
+| *Comando* | *Descripción* |
+| :---: | :---: |
+| *git config \--list* | Lista las configuraciones |
+| *git config \--list \--show-origin* | Muestra donde están guardadas las configuraciones |
+| *git config \--global user.email tuEmail* | Configura el email |
+| *git config \--global user.name tuNombre* | Configura el nombre (Este será el que se verá en los commits) |
+| *git config \--global \--replace-all user.name “nombre modificado”* | Modifica un atributo (en este caso el username) |
+
 | *Modificar atributo eliminandolo y volviendolo a añadir* |
 | :------------: |
 | *git config --global --unset-all user.name* |
 | *git config --global --add user.name “tu nombre”* |
+
+
+&nbsp;
+
+
+## Git remote (Para primera vez subiendo el proyecto)
+
+| *Comando* | *Descripción* |
+| :------------: | :------------: |
+| *git remote add origin HTTPS/SSH* | Conectamos nuestro git repository al repositorio remoto (GitHub) con una url de HTTPS o SSH (SSH es más seguro y se debe hacer el procedimiento de la siguiente tabla) |
+| *git pull origin main \--allow-unrelated-histories* | Traemos la version del repositorio remoto y hacemos merge para crear un commit con los archivos de ambas partes(local y remoto) |
+| *git remote remove origin* | Elimina la conexión con el repositorio remoto |
+| *git remote set-url origin newHTTPS/SSH* | Cambia la url del repositorio remoto origin |
+| *git remote -v* | Lista las conexiones existentes |
+
+
+&nbsp;
+
+
+## Configuración de llaves SSH en Windows y Linux
+
+| *Comando* | *Descripción* |
+| :------------: | :------------: |
+| *ssh-keygen -t rsa -b 4096 -C "tuCorreo"* | Generamos una llave pública y privada para conectarnos de manera más segura y rápida a GitHub |
+|  | Copiamos el contenido de la llave pública generada y esto lo pegamos en GitHub en Settings/SSH and GPG keys/New SSH key |
+| *eval $(ssh-agent -s)* | Encendemos el servidor de llaves SSH de nuestra computadora |
+| *ssh-add rutaDondeGuardasteTuLlavePrivada* | Añadimos la llave SSH al "servidor" (Ejemplo: ssh-add ~/.ssh/id_rsa) |
+
+
+&nbsp;
+
+
+## Repositorio remoto
+
+| *Comando* | *Descripción* |
+| :------------: | :------------: |
+| *git clone HTTPS/SSH* | Clona el repositorio remoto (GitHub) de manera que podamos trabajar en nuestra máquina local. Para esto, debemos copiar la url HTTPS o SSH (esta última requiere que hayas hecho la conexión vía SSH con GitHub) |
+| *git fetch* | Descarga los cambios del repositorio remoto al git repository pero no los copia al working directory |
+| *git merge* | Fusiona los archivos del git repository con los de nuestro working directory |
+| *git merge nameBranch* | Fusiona la rama en la que nos encontramos (a donde apunta el HEAD) con nameBranch |
+| *git merge branchX \--allow-unrelated-histories* | Obliga a fusionar branchX con la actual (a donde apunta el HEAD) |
+| *git pull* | Descarga los cambios del repositorio remoto (GitHub) a nuestro git repository y working directory fusionandolos con ambos |
+| *git pull origin nameBranch* | Descarga cambios del repositorio remoto (GitHub) de la rama nameBranch y los fusiona a la rama actual |
+| *git pull origin nameBranch \--allow-unrelated-histories* | Obliga a descargar cambios del repositorio remoto (GitHub) de la rama nameBranch y fusionarlos a la rama actual |
+| *git push* | Envía los commits al repositorio remoto |
+| *git push origin nameBranch* | Envía la rama nameBranch al repositorio remoto |
+| *git push origin \--tags* | Envía los tags al repositorio remoto |
+| *git push origin nameBranch \--tags* | Envía los tags de la rama nameBranch al repositorio remoto |
+| *git push origin :refs/tags/nameTag* | Elimina un tag nameTag del repositorio remoto |
+| *git push origin \--delete nameBranch* | Elimina la rama remota nameBranch |
 
 
 &nbsp;
@@ -134,55 +198,6 @@ En Windows y en Mac ya viene junto con la instalación de GIT.
 | *git reset \--soft hashCommit* | Los cambios actuales que tengamos se agregarán al staging y el HEAD apuntará al hashCommit |
 | *git reset HEAD~* | HEAD retrocede una posición (Hacia donde apunta) |
 | *git reset HEAD@{3}* | Regresa múltiples posiciones (en este caso 3) manteniendo los cambios en nuestro directorio |
-
-
-&nbsp;
-
-
-## Configuración de llaves SSH en Windows y Linux
-
-| *Comando* | *Descripción* |
-| :------------: | :------------: |
-| *ssh-keygen -t rsa -b 4096 -C "tuCorreo"* | Generamos una llave pública y privada para conectarnos de manera más segura y rápida a GitHub |
-|  | Copiamos el contenido de la llave pública generada y esto lo pegamos en GitHub en Settings/SSH and GPG keys/New SSH key |
-| *eval $(ssh-agent -s)* | Encendemos el servidor de llaves SSH de nuestra computadora |
-| *ssh-add rutaDondeGuardasteTuLlavePrivada* | Añadimos la llave SSH al "servidor" (Ejemplo: ssh-add ~/.ssh/id_rsa) |
-
-
-&nbsp;
-
-
-## Git remote (Para primera vez subiendo el proyecto)
-
-| *Comando* | *Descripción* |
-| :------------: | :------------: |
-| *git remote add origin HTTPS/SSH* | Conectamos nuestro git repository al repositorio remoto (GitHub) con una url de HTTPS o SSH (SSH es más seguro y se debe hacer el procedimiento de la tabla anterior) |
-| *git remote remove origin* | Elimina la conexión con el repositorio remoto |
-| *git remote set-url origin newHTTPS/SSH* | Cambia la url del repositorio remoto origin |
-| *git remote -v* | Lista las conexiones existentes |
-
-
-&nbsp;
-
-
-## Repositorio remoto
-
-| *Comando* | *Descripción* |
-| :------------: | :------------: |
-| *git clone HTTPS/SSH* | Clona el repositorio remoto (GitHub) de manera que podamos trabajar en nuestra máquina local. Para esto, debemos copiar la url HTTPS o SSH (esta última requiere que hayas hecho la conexión vía SSH con GitHub) |
-| *git fetch* | Descarga los cambios del repositorio remoto al git repository pero no los copia al working directory |
-| *git merge* | Fusiona los archivos del git repository con los de nuestro working directory |
-| *git merge nameBranch* | Fusiona la rama en la que nos encontramos (a donde apunta el HEAD) con nameBranch |
-| *git merge branchX \--allow-unrelated-histories* | Obliga a fusionar branchX con la actual (a donde apunta el HEAD) |
-| *git pull* | Descarga los cambios del repositorio remoto (GitHub) a nuestro git repository y working directory fusionandolos con ambos |
-| *git pull origin nameBranch* | Descarga cambios del repositorio remoto (GitHub) de la rama nameBranch y los fusiona a la rama actual |
-| *git pull origin nameBranch \--allow-unrelated-histories* | Obliga a descargar cambios del repositorio remoto (GitHub) de la rama nameBranch y fusionarlos a la rama actual |
-| *git push* | Envía los commits al repositorio remoto |
-| *git push origin nameBranch* | Envía la rama nameBranch al repositorio remoto |
-| *git push origin \--tags* | Envía los tags al repositorio remoto |
-| *git push origin nameBranch \--tags* | Envía los tags de la rama nameBranch al repositorio remoto |
-| *git push origin :refs/tags/nameTag* | Elimina un tag nameTag del repositorio remoto |
-| *git push origin \--delete nameBranch* | Elimina la rama remota nameBranch |
 
 
 &nbsp;
