@@ -94,7 +94,7 @@ En Windows y en Mac ya viene junto con la instalación de GIT.
 | :------------: |
 | *sudo apt-get update* |
 | *sudo apt-get upgrade* |
-| *audo apt install gitk* |
+| *sudo apt install gitk* |
 
 | *Comando* | *Descripción* |
 | :------------: | :------------: |
