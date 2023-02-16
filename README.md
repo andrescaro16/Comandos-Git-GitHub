@@ -104,6 +104,7 @@ En el siguiente link puedes realizar la instalación de git: https://git-scm.com
 | *git merge* | Fusiona los archivos del git repository con los de nuestro working directory |
 | *git merge nameBranch* | Fusiona la rama en la que nos encontramos (a donde apunta el HEAD) con nameBranch |
 | *git merge branchX \--allow-unrelated-histories* | Obliga a fusionar branchX con la actual (a donde apunta el HEAD) |
+| *git merge \--no-ff -m mensajePersonalizado nameBranch* | Fusiona la rama en la que nos encontramos con nameBranch dejando el commit con el mensaje personalizado (y /--no-ff garantiza que se cree un nuevo commit evitando el merge en avance rápido) |
 | *git pull* | Descarga los cambios del repositorio remoto (GitHub) a nuestro git repository y working directory fusionandolos con ambos |
 | *git pull origin nameBranch* | Descarga cambios del repositorio remoto (GitHub) de la rama nameBranch y los fusiona a la rama actual |
 | *git pull origin nameBranch \--allow-unrelated-histories* | Obliga a descargar cambios del repositorio remoto (GitHub) de la rama nameBranch y fusionarlos a la rama actual |
