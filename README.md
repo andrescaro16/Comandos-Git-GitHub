@@ -1,7 +1,34 @@
+
 # Comandos de Git y GitHub
 
 
 &nbsp;
+## Contenido
+
+-   [Instalación](#instalación)
+-   [Comandos básicos terminal ](#comandos-básicos-terminal)
+-   [Comandos básicos git ](#comandos-básicos-git)
+-   [Configuración Git ](#configuración-git)
+-   [Git remote (Para primera vez subiendo el proyecto)](#git-remote-para-primera-vez-subiendo-el-proyecto)
+-   [Configuración de llaves SSH en Windows y Linux](#configuración-de-llaves-ssh-en-windows-y-linux)
+-   [Repositorio remoto](#repositorio-remoto)
+-   [Corregir último commit](#corregir-último-commit)
+-   [Branches y checkout](#branches-y-checkout)
+-   [Interfaz gráfica gitk](#interfaz-gráfica-gitk)
+-   [Restore para sacar de staging y directorio de trabajo](#restore-para-sacar-de-staging-y-directorio-de-trabajo)
+-   [Eliminar archivos con git rm](#eliminar-archivos-con-git-rm)
+-   [Volver en el tiempo con git reset](#volver-en-el-tiempo-con-git-reset)
+-   [Análisis de cambios](#análisis-de-cambios)
+-   [Ver TODA la historia](#ver-toda-la-historia)
+-   [Alias](#alias)
+-   [Tags](#tags)
+-   [Escribiendo la historia con rebase (MALA PRACTICA)](#escribiendo-la-historia-con-rebase-mala-practica)
+-   [Memoria temporal con stash](#memoria-temporal-con-stash)
+-   [Limpiar el working directory](#limpiar-el-working-directory)
+-   [Traer commit antigüo como HEAD con cherry-pick (MALA PRACTICA)](#traer-commit-antigüo-como-head-con-cherry-pick-mala-practica)
+-   [Buscando en archivos y commits de Git](#buscando-en-archivos-y-commits-de-git)
+-   [Mas información](#mas-información)
+
 
 
 ## Instalación:
@@ -68,7 +95,7 @@ En el siguiente link puedes realizar la instalación de git: https://git-scm.com
 &nbsp;
 
 
-## Git remote (Para primera vez subiendo el proyecto)
+## Git remote Para primera vez subiendo el proyecto
 
 | *Comando* | *Descripción* |
 | :------------: | :------------: |
@@ -327,7 +354,7 @@ Este se encarga de eliminar los archivos untracked que no forman parte de nuestr
 &nbsp;
 
 
-## Traer commit antigüo como HEAD con cherry-pick (MALA PRACTICA)
+## Traer commit antigüo como HEAD con cherry pick (MALA PRACTICA)
 
 | *Comando* | *Descripción* |
 | :------------: | :------------: |
