@@ -173,6 +173,7 @@ En el siguiente link puedes realizar la instalación de git: https://git-scm.com
 | *git checkout branch/commit_name* | Ir a otra rama/commit |
 | *git checkout -b newBranch* | Crea rama newBranch y vamos a ella |
 | *git checkout hashCommit nameFile.txt* | Permite regresar el archivo nameFile.txt a la versión del commit del hash |
+| *git fetch --prune* | Permite limpiar las ramas obsoletas. Actualizará la información sobre el repositorio remoto y entonces limpiará las referencias a ramas remotas que han sido eliminadas |
 
 
 &nbsp;
